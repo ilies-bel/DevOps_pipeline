@@ -50,6 +50,8 @@ jobs:
 addons:
   sonarcloud:
     organization: "devops-cpe"
+    before_script:
+      - cd sample-application-backend
     token: "$SONARCLOUD_TOKEN"
 
 cache:
