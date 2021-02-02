@@ -7,11 +7,7 @@ stages:
 
 jobs:
   include:
-    - stage: "Build and Test"
-
-    For what purpose ?
-    Now you should be able to find your docker images on your docker repository.
-
+  - stage: "Build and Test"
     language: java
     jdk: oraclejdk11
     before_script:
