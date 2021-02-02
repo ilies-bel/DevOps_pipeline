@@ -43,6 +43,8 @@ jobs:
       - docker push otakouilles/devops_front
       - echo "Docker push ..."
   - stage: "Build and Test"
+    before_script:
+      - cd sample-application-backend
     language: java
     script:
       - mvn clean verify "org.jacoco:jacoco-maven-plugin:prepare-agent" "install" "sonar:sonar" "-Dsonar.projectKey=devops-2021"
