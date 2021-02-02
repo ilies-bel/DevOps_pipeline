@@ -51,7 +51,7 @@ jobs:
 
 addons:
   sonarcloud:
-    organization: "ilies-bel"
+    organization: "iliesdevops"
     before_script:
       - cd sample-application-backend
     token: "$SONARCLOUD_TOKEN"
