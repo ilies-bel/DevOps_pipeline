@@ -45,7 +45,7 @@ jobs:
   - stage: "Build and Test"
     language: java
     script:
-      - mvn clean verify org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=devops-2021
+      - mvn clean verify "org.jacoco:jacoco-maven-plugin:prepare-agent" "install" "sonar:sonar" "-Dsonar.projectKey=devops-2021"
 
 addons:
   sonarcloud:
