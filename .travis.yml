@@ -30,23 +30,22 @@ jobs:
     before_script:
       - cd sample-application-backend
     script:
-      - echo "Docker build ..."
+      - docker build -t otakouilles/devops_back .
+      - echo "Docker build ...".
+      - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
       - echo "Docker login ..."
+      - docker push otakouilles/devops_back
       - echo "Docker push ..."
   - stage: "Package"
     before_script:
       - cd sample-application-frontend
     script:
+      - docker build -t otakouilles/devops_front .
       - echo "Docker build ..."
+      - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
       - echo "Docker login ..."
+      - docker push otakouilles/devops_front
       - echo "Docker push ..."
-  - stage: "Package"
-    before_script:
-      - cd sample-application-frontend
-    script:
-      - echo "Docker build ..."
-      - echo "Docker login ..."
-      - echo "Docker push ...".
 
 cache:
   directories:
