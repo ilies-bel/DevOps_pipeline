@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/ilies-bel/DevOps_pipeline.svg?branch=master)](https://travis-ci.com/ilies-bel/DevOps_pipeline)
 # sample-application-students
 This is a sample application Springboot - Vue - Postgres Student application
 
