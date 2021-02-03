@@ -1,0 +1,11 @@
+---
+# tasks file for roles/front
+
+- name: Create frontend container and connect to network
+  docker_container:
+    name: frontend
+    image: otakouilles/devops_front
+    ports:
+      - "80:80"
+    networks:
+      - name: "my_network"

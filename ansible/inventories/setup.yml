@@ -1,0 +1,7 @@
+all:
+  vars:
+    ansible_user: centos
+    ansible_ssh_private_key_file: ~/id_rsa.dat
+  children:
+    prod:
+      hosts: centos@brice.folleas.takima.cloud

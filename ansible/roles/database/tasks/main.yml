@@ -1,0 +1,15 @@
+---
+# tasks file for roles/database
+
+- name: Create db container and connect to network
+  docker_container:
+    name: database
+    image: postgres:12.0-alpine
+    env:
+      POSTGRES_USER: "takima"
+      POSTGRES_PASSWORD: "takimapass"
+      POSTGRES_DB: "SchoolOrganisation"
+    ports:
+      - "5432:5432"
+    networks:
+      - name: "my_network"
